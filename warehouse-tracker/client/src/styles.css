@@ -1,0 +1,116 @@
+/* Simple, clean styling. Kept in one file to start; could be split per-component later. */
+
+:root {
+  --accent: #2e5a87;
+  --low: #c0392b;
+  --ok: #27ae60;
+  --bg: #f5f7fa;
+  --border: #e1e6ec;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: #1a1a1a;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.app-header h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.subtitle { margin: 0 0 20px; color: #667; }
+
+.banner.error {
+  background: #fdecea;
+  color: var(--low);
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* Stats */
+.stats-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.stat {
+  flex: 1;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+.stat-number { display: block; font-size: 2rem; font-weight: 700; }
+.stat-number.warn { color: var(--low); }
+.stat-label { color: #778; font-size: 0.85rem; }
+
+/* Add form */
+.add-form {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+.add-form h2 { margin: 0 0 12px; font-size: 1.1rem; }
+.add-form-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.add-form input {
+  flex: 1;
+  min-width: 120px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+button:hover { opacity: 0.9; }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+button.danger { background: var(--low); }
+
+/* Table */
+.item-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.item-table th, .item-table td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.item-table th { background: #fafbfc; font-size: 0.85rem; color: #556; }
+.row-low { background: #fff7f6; }
+
+.badge {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.badge-low { background: #fdecea; color: var(--low); }
+.badge-ok { background: #eafaf1; color: var(--ok); }
+
+.actions { display: flex; gap: 6px; }
+
+.empty { color: #778; text-align: center; padding: 24px; }
+.app-footer { margin-top: 32px; text-align: center; color: #99a; font-size: 0.8rem; }
